@@ -1,5 +1,8 @@
+import Picture from './assets/pic.jpg'
 function Navbar(){
     return(
+    <>
+      
     <nav className="main-container-nav">
         <div className="company-name">
             <p>
@@ -14,6 +17,18 @@ function Navbar(){
                 
             </ul>
         </div>
-    </nav>);
+    </nav>  
+    <div className="profile-pic-container">
+            <div className="pic-container">
+                <img src={Picture} />
+            </div>
+            <div className="seif-info">
+                <h2>Yeabsira Ayele</h2>
+                <p> I am a Software Enginnering Student and Front End Website Developer.</p>
+            </div>
+    </div>
+  </>
+
+);
 }
 export default Navbar
