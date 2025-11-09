@@ -1,6 +1,6 @@
 body{
  margin: 0;
- background-image: url(assets/background-image-portiflo.jpg);
+ background-image: url(assets/background-image-portfolio.jpg);
  background-attachment: fixed;
  background-repeat: no-repeat;
  background-size: cover;
@@ -16,6 +16,7 @@ body{
   justify-content: space-between;
   gap: 10px;
   background-color: hsla(0,0%, 0%, 0.8);
+  margin-bottom: 0;
   
 }
 .main-container-nav:hover{
@@ -38,10 +39,12 @@ a{
 
 }
 a:hover{
-  color: hsla(220, 40%, 100%, 1);
+  color: hsla(224, 100%, 50%, 1);
+    transform: scale(1.2);
 }
 a:active{
-  color: hsla(0, 0%, 0%, 1);
+  color: hsla(0, 100%, 50%, 1);
+  transform: scale(1.2);
 }
 
 li {
@@ -59,14 +62,7 @@ li {
 .company-name p:hover{
   text-shadow: 5px 5px 4.4px hsla(0, 0%, 0%, 1);
 } 
-/* .profile-pic-container{
-  display: flex;
-  justify-content: center;
-  width: 200px;
-  height: 300px;
-  background-color: hsla(0, 0%, 0%, 1);
 
-} */
 .profile-pic-container{
   display: flex;
   flex-direction: column;
@@ -99,9 +95,11 @@ button{
 button:hover{
     color: rgb(6, 159, 241);
     background-color: hsla(0,0%, 0%, 0);
-    transition:color 0.8s ease ;
-    transition:background-color 0.8s ease ;
+    transition:color 0.8s linear ;
+    transition:background-color 0.8s linear ;
+
 }
+
 
 button::after{
     color: rgb(231, 245, 253);
@@ -110,7 +108,7 @@ button::after{
     transition:background-color 0.8s ease ;
 }
 .about{
-  background:  url(assets/portifolio.jpg);
+  background:  url(assets/portfolio.jpg);
   display: flex;
   flex-direction: column;
    background-attachment: fixed;
@@ -121,12 +119,13 @@ button::after{
 
 .about-container{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   align-items: center;
   height: 100vh;
   color: hsla(0, 0%, 100%, 1);
   line-height: 15px;
+  margin-left: 50px;
 }
 .for-skills li{
   margin-right: 20px;
@@ -149,9 +148,12 @@ button::after{
 }
 
 .contact-container{
+  margin-top: 100px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-image: url(assets/background-image-portiflo.jpg);
   
 }
@@ -175,6 +177,9 @@ button::after{
 .form-container{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+ 
+ 
 }
 
 .form-container textarea{
@@ -205,4 +210,9 @@ button::after{
 
 .img-container .img-div{
    border-radius: 5px;
+}
+
+.about-container .hello{
+   color: white ;
+   margin-bottom: 2px;
 }

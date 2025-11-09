@@ -1,25 +1,25 @@
-
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-// import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
-import Hero from './about';
-import React, {useState} from 'react';
-import "./App.css";
-import Aboutme from './profilepicture';
-import Picturepro from './assets/mine.jpg';
+import React, { useEffect, useState } from 'react';
+import Hero from './hero';
+import Aboutme from './aboutme';
 import Contact from './contact';
-
+import "./App.css";
+import emailjs from '@emailjs/browser';
 
 function App() {
-  const [showText , setShowText] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false); 
+  useEffect(() => {
+    setIsLoaded(true);                              
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);                                           
 
-  return(
+  return (
     <div>
-      {!showText && <Hero onVeiwMore={() =>
-        setShowText(true)} />}
-      {showText && <Aboutme/>}
-      <Contact/>
+      <Hero />
+      <Aboutme />
+      <Contact />
     </div>
   );
 }
 
 export default App;
+
