@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import portrait from '../assets/p.png'
 import tms from '../assets/tms.jpg'
-
+import rag from '../assets/rag.jpg'
 const projects = [
 {
 number: '01',
@@ -17,7 +17,7 @@ description:
 tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
 image: tms,
 liveUrl: 'https://task-managment-frontend-4tic.vercel.app/',
-githubUrl: 'https://github.com/Yeabsira-Ayele/task_managment_system',
+githubUrl: 'https://github.com/Yeabsira-Ayele/Task-managment-frontend',
 featured: false,
 },
 {
@@ -29,7 +29,7 @@ tagline: 'AI-powered question answering with RAG',
 description:
 'A document question-answering system that uses retrieval augmented generation to answer questions from uploaded documents with relevant context.',
 tags: ['Python', 'FastAPI', 'LangChain', 'ChromaDB', 'Gemini'],
-image: portrait,
+image: rag,
 liveUrl: '',
 githubUrl: 'https://github.com/Yeabsira-Ayele/-Document-Q-A-with-Citations',
 featured: false,

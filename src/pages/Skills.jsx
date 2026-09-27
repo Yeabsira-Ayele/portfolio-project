@@ -80,11 +80,13 @@ const Skills = () => {
           Skills & technologies
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 items-stretch ">
           {skillCategories.map((category) => (
             <div
               key={category.label}
-              className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-6 hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
+              className="group rounded-2xl border bg-gray-50 dark:bg-gray-950 p-6 border-gray-200 dark:border-gray-800
+                transition-all duration-300 ease-out
+                hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-600/10 hover:border-blue-600/60"
             >
               <h3 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">
                 {category.label}
