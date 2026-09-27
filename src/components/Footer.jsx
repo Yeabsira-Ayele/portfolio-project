@@ -2,18 +2,18 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 
-const navigation = [
-  { to: '/', label: 'Work' },
-  { to: '/about', label: 'About' },
-  { to: '/experience', label: 'Experience' },
-  { to: '/contact', label: 'Contact' },
+const navigation =  [
+  { to: 'projects', label: 'Projects' },
+  { to: 'experience', label: 'Experience' },
+  { to: 'skills', label: 'Skills' },
+  { to: 'contact', label: 'Contact' },
 ]
 
 const socialLinks = [
-  { href: 'https://github.com/your-username', label: 'GitHub', icon: FaGithub },
-  { href: 'https://linkedin.com/in/your-username', label: 'LinkedIn', icon: FaLinkedin },
-  { href: 'https://x.com/your-username', label: 'X/Twitter', icon: FaXTwitter },
-  { href: 'mailto:you@example.com', label: 'Email', icon: null },
+  { href: 'https://github.com/Yeabsira-Ayele', label: 'GitHub', icon: FaGithub },
+  { href: 'https://linkedin.com/in/yeabsira-ayele-509a84377', label: 'LinkedIn', icon: FaLinkedin },
+  { href: 'https://x.com/your-username', label: 'Leetcode', icon: FaXTwitter },
+  { href: 'mailto:yeabsiraayele42@gmail.com', label: 'Email', icon: null },
 ]
 
 const Footer = () => {
@@ -47,12 +47,12 @@ const Footer = () => {
             <ul className="flex flex-col gap-3.5">
               {navigation.map((link) => (
                 <li key={link.to}>
-                  <NavLink
+                  <a
                     to={link.to}
                     className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     {link.label}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>

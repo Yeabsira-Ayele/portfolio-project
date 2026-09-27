@@ -2,49 +2,53 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
+import portrait from '../assets/p.png'
 
 const projects = [
-  {
-    number: '01',
-    year: '2024',
-    status: 'Live',
-    title: 'Lewegene',
-    tagline: 'Bioinformatics platform for Ethiopian genetic heritage',
-    description:
-      'A web platform enabling genetic heritage analysis and ancestry data visualization for East African populations, built for researchers and clinicians across Ethiopia.',
-    tags: ['React', 'Python', 'FastAPI', 'PostgreSQL'],
-    image: '/images/lewegene.jpg',
-    liveUrl: 'http://localhost:5173/', // ← paste your live link here
-    githubUrl: 'http://localhost:5173/', // ← paste your repo link here
-    featured: true,
-  },
-  {
-    number: '02',
-    year: '2024',
-    status: 'Open Source',
-    title: 'Task Management System',
-    tagline: 'Full-stack Kanban with real-time collaboration',
-    description:
-      'A collaborative task management application with Kanban boards, sprint planning, and team workload analytics — built from scratch with a focus on performance and UX clarity.',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB'],
-    image: '/images/task-manager.jpg',
-    liveUrl: '',
-    githubUrl: '',
-  },
-  {
-    number: '03',
-    year: '2024',
-    status: 'Research',
-    title: 'RAG Q&A',
-    tagline: 'Intelligent document Q&A via retrieval augmented generation',
-    description:
-      'An AI-powered question-answering system that uses retrieval augmented generation to deliver accurate, source-grounded answers over large document corpora.',
-    tags: ['Python', 'LangChain', 'Pinecone', 'OpenAI'],
-    image: '/images/rag-qa.jpg',
-    liveUrl: 'http://localhost:5173/',
-    githubUrl: 'http://localhost:5173/',
-  },
+{
+number: '01',
+year: '2026',
+status: 'Live',
+title: 'Task Management System',
+tagline: 'Full-stack team task management platform',
+description:
+'A task management platform with authentication, role-based access, task assignment, status tracking, due dates, priorities, and dashboard analytics.',
+tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+image: portrait,
+liveUrl: '',
+githubUrl: 'https://github.com/Yeabsira-Ayele/task_managment_system',
+featured: false,
+},
+{
+number: '02',
+year: '2026',
+status: 'AI Project',
+title: 'Document Q&A',
+tagline: 'AI-powered question answering with RAG',
+description:
+'A document question-answering system that uses retrieval augmented generation to answer questions from uploaded documents with relevant context.',
+tags: ['Python', 'FastAPI', 'LangChain', 'ChromaDB', 'Gemini'],
+image: portrait,
+liveUrl: '',
+githubUrl: '',
+featured: false,
+},
+{
+number: '03',
+year: '2026',
+status: 'Open Source',
+title: 'RAG Evaluation Suite',
+tagline: 'Evaluation framework for retrieval and generation',
+description:
+'An evaluation suite for measuring document retrieval and LLM answer quality using Hit@k, MRR, automated judging, end-to-end evaluation, and unanswerable questions.',
+tags: ['Python', 'ChromaDB', 'LLM', 'RAG', 'Streamlit'],
+image: portrait,
+liveUrl: '',
+githubUrl: '',
+},
+
 ]
+
 
 const Projects = () => {
   return (
@@ -58,7 +62,7 @@ const Projects = () => {
           </p>
          
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
-            Selected projects
+            Selected Websites
           </h2>
           
         </div>
@@ -68,10 +72,10 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.number}
-              className={`grid md:grid-cols-[2fr_1fr] rounded-2xl overflow-hidden border bg-gray-50 dark:bg-gray-950 transition-colors
-                ${project.featured
-                  ? 'border-blue-600/60'
-                  : 'border-gray-200 dark:border-gray-800'}`}
+              className={`group grid md:grid-cols-[2fr_1fr] rounded-2xl overflow-hidden border bg-gray-50 dark:bg-gray-950
+  transition-all duration-300 ease-out
+  hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-600/10 hover:border-blue-600/60
+  border-gray-200 dark:border-gray-800`}
             >
               {/* Text content */}
               <div className="p-8 flex flex-col justify-between">
@@ -141,7 +145,7 @@ const Projects = () => {
               </div>
 
               {/* Image */}
-              <div className="relative min-h-[220px] md:min-h-full">
+              <div className="hidden md:block relative min-h-[220px] md:min-h-full">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -152,13 +156,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Mobile "view all" */}
-        <NavLink
-          to="/projects"
-          className="sm:hidden flex items-center justify-center gap-1.5 mt-8 text-sm font-mono text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-        >
-          View all <ArrowRight className="w-3.5 h-3.5" />
-        </NavLink>
+        
 
       </div>
     </section>

@@ -3,7 +3,7 @@ import { Menu, X, Sun, Moon, ArrowRight } from 'lucide-react'
 
 const links = [
   { to: 'home', label: 'Home' },
-  { to: 'projects', label: 'Work' },
+  { to: 'projects', label: 'Projects' },
   { to: 'experience', label: 'Experience' },
   { to: 'skills', label: 'Skills' },
   { to: 'contact', label: 'Contact' },
@@ -68,14 +68,13 @@ const Navbar = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const linkClass = (id) =>
-    `px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer
-     ${activeSection === id
-        ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
-        : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`
-
+const linkClass = (id) =>
+  `px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer
+  ${activeSection === id
+? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white'
+  : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'}`
   return (
-    <nav className="sticky top-0 z-30 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <nav className="sticky top-0 z-30 bg-white/80 dark:bg-black backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-3">
 
         <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home') }} className="flex items-center z-20">
@@ -160,14 +159,15 @@ const Navbar = () => {
           ))}
 
           <div className="border-t border-gray-100 dark:border-gray-800 mt-4 pt-5">
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNavClick('contact') }}
-              className="flex items-center justify-center gap-1.5 w-full px-4 py-3.5 rounded-full bg-blue-600 text-white text-base font-medium hover:bg-blue-700 transition-colors"
-            >
-              Get in touch <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+  <a
+    href="#contact"
+    onClick={(e) => { e.preventDefault(); handleNavClick('contact') }}
+    className="flex items-center justify-center gap-1.5 w-full px-4 py-3.5 rounded-full bg-blue-600 text-white text-base font-medium hover:bg-blue-700 transition-colors"
+  >
+    Get in touch <ArrowRight className="w-4 h-4" />
+  </a>
+</div>
+
         </div>
       </div>
     </nav>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Code2 } from 'lucide-react'
 import {
   SiReact, SiJavascript, SiTypescript, SiVite, SiTailwindcss, SiRedux,
@@ -51,105 +51,60 @@ const skillMeta = {
 }
 
 const skillCategories = [
-  { label: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Zustand', 'Redux Toolkit', 'Zod', 'Axios', 'shadcn/ui', 'Framer Motion', 'Recharts'] },
-  { label: 'Backend', skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'Mongoose', 'JWT', 'bcryptjs', 'Nodemailer'] },
-  { label: 'AI / RAG', skills: ['Python', 'FastAPI', 'Google Gemini', 'LangChain', 'Hugging Face', 'ChromaDB', 'Embeddings', 'RAG', 'LLM evaluation'] },
-  { label: 'Development', skills: ['Git', 'GitHub', 'VS Code', 'npm', 'Figma'] },
-  { label: 'Deployment', skills: ['Vercel', 'Render', 'MongoDB Atlas'] },
+  {
+    label: 'Frontend',
+    skills: ['React', 'JavaScript', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Zustand', 'Redux Toolkit', 'Zod', 'Axios', 'shadcn/ui', 'Framer Motion', 'Recharts'],
+  },
+  {
+    label: 'Backend',
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'Mongoose', 'JWT', 'bcryptjs', 'Nodemailer'],
+  },
+  {
+    label: 'AI / RAG',
+    skills: ['Python', 'FastAPI', 'Google Gemini', 'LangChain', 'Hugging Face', 'ChromaDB', 'Embeddings', 'RAG', 'LLM evaluation'],
+  },
+  {
+    label: 'Development & Deployment',
+    skills: ['Git', 'GitHub', 'VS Code', 'npm', 'Figma' , 'Vercel', 'Render', 'MongoDB Atlas'],
+  },
+  
 ]
 
-const SkillCard = ({ skill, delay, visible }) => {
-  const [active, setActive] = useState(false)
-  const meta = skillMeta[skill] || { icon: Code2, color: '#9CA3AF' }
-  const Icon = meta.icon
-
-  return (
-    <div
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-      onClick={() => setActive((a) => !a)} // tap-to-activate on mobile
-      className={`flex items-center gap-3 rounded-xl border px-4 py-3.5 cursor-pointer
-        transition-all duration-300 ease-out
-        ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}
-        ${active
-          ? 'border-transparent -translate-y-1 scale-[1.03] shadow-lg'
-          : 'border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950'}`}
-      style={{
-        transitionDelay: visible ? `${delay}ms` : '0ms',
-        backgroundColor: active ? `${meta.color}14` : undefined,
-        boxShadow: active ? `0 8px 24px -8px ${meta.color}66` : undefined,
-        borderColor: active ? `${meta.color}55` : undefined,
-      }}
-    >
-      <span
-        className="flex items-center justify-center w-8 h-8 shrink-0 rounded-lg transition-all duration-300"
-        style={{
-          backgroundColor: `${meta.color}${active ? '33' : '1A'}`,
-          transform: active ? 'scale(1.15) rotate(-6deg)' : 'scale(1) rotate(0deg)',
-        }}
-      >
-        <Icon
-          className="w-4 h-4 transition-transform duration-300"
-          style={{ color: meta.color }}
-        />
-      </span>
-      <span
-        className={`text-sm font-medium truncate transition-colors duration-300 ${active ? '' : 'text-gray-900 dark:text-white'}`}
-        style={{ color: active ? meta.color : undefined }}
-      >
-        {skill}
-      </span>
-    </div>
-  )
-}
-
 const Skills = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    setVisible(false)
-    const t = setTimeout(() => setVisible(true), 30)
-    return () => clearTimeout(t)
-  }, [activeIndex])
-
-  const activeCategory = skillCategories[activeIndex]
-
   return (
     <section className="bg-white dark:bg-black transition-colors">
       <div className="max-w-6xl mx-auto px-6 py-20">
-        <p className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">
-          Stack & tools
-        </p>
+          {/* Header */}
+       <p className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">Skills</p>
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-10">
           Skills & technologies
         </h2>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          {skillCategories.map((category, i) => (
-            <button
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 items-stretch">
+          {skillCategories.map((category) => (
+            <div
               key={category.label}
-              onClick={() => setActiveIndex(i)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                ${i === activeIndex
-                  ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
-                  : 'bg-gray-100 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+              className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-6 hover:border-gray-300 dark:hover:border-gray-700 transition-colors"
             >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Skill grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 gap-4">
-          {activeCategory.skills.map((skill, i) => (
-            <SkillCard
-              key={skill}
-              skill={skill}
-              delay={i * 40}
-              visible={visible}
-            />
+              <h3 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">
+                {category.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => {
+                  const meta = skillMeta[skill] || { icon: Code2, color: '#9CA3AF' }
+                  const Icon = meta.icon
+                  return (
+                    <span
+                      key={skill}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-200/60 dark:bg-gray-800 text-xs font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      <Icon className="w-3.5 h-3.5" style={{ color: meta.color }} />
+                      {skill}
+                    </span>
+                  )
+                })}
+              </div>
+            </div>
           ))}
         </div>
       </div>
