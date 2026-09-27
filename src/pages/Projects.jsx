@@ -2,9 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
-import portrait from '../assets/p.png'
-import tms from '../assets/tms.jpg'
-import rag from '../assets/rag.jpg'
+import tms from '../assets/tms2.jpg'
+import rag from '../assets/rag4.jpg'
 const projects = [
 {
 number: '01',
@@ -133,7 +132,7 @@ const Projects = () => {
                 </div>
               </div>
                {/*image*/}
-              <div className="hidden md:block relative aspect-[/]  ">
+              <div className="hidden md:block relative   ">
               <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full" />
 </div>
             </div>

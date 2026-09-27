@@ -33,13 +33,7 @@ const Home = () => {
               className="px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors">
                 View my work
               </a>
-              {/* <a
-            href="#projects"
-            onClick={(e) => { e.preventDefault(); handleNavClick('projects') }}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
-          >
-            Get in touch <ArrowRight className="w-3.5 h-3.5" />
-          </a> */}
+             
               <a href={cvFile} download className="flex items-center gap-1.5 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-950 transition-colors">
                 <LucideDownload className="w-4 h-4" /> Download CV
               </a>
