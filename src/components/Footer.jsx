@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 
-const navigation =  [
+const navigation = [
   { to: 'projects', label: 'Projects' },
   { to: 'experience', label: 'Experience' },
   { to: 'skills', label: 'Skills' },
@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <footer className="bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-8">
 
           {/* Brand */}
           <div>
@@ -39,46 +39,50 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h4 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-5">
-              Navigation
-            </h4>
-            <ul className="flex flex-col gap-3.5">
-              {navigation.map((link) => (
-                <li key={link.to}>
-                  <a
-                    to={link.to}
-                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Navigation + Links */}
+          <div className="grid grid-cols-2 md:contents gap-8">
 
-          {/* Links */}
-          <div>
-            <h4 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-5">
-              Links
-            </h4>
-            <ul className="flex flex-col gap-3.5">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Navigation */}
+            <div>
+              <h4 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-5">
+                Navigation
+              </h4>
+              <ul className="flex flex-col gap-3.5">
+                {navigation.map((link) => (
+                  <li key={link.to}>
+                    <NavLink
+                      to={link.to}
+                      className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
+            {/* Links */}
+            <div>
+              <h4 className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-5">
+                Links
+              </h4>
+              <ul className="flex flex-col gap-3.5">
+                {socialLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
         </div>
 
         {/* Bottom bar */}

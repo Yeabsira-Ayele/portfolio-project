@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import portrait from '../assets/p.png'
+import tms from '../assets/tms.jpg'
 
 const projects = [
 {
@@ -14,8 +15,8 @@ tagline: 'Full-stack team task management platform',
 description:
 'A task management platform with authentication, role-based access, task assignment, status tracking, due dates, priorities, and dashboard analytics.',
 tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
-image: portrait,
-liveUrl: '',
+image: tms,
+liveUrl: 'https://task-managment-frontend-4tic.vercel.app/',
 githubUrl: 'https://github.com/Yeabsira-Ayele/task_managment_system',
 featured: false,
 },
@@ -30,22 +31,10 @@ description:
 tags: ['Python', 'FastAPI', 'LangChain', 'ChromaDB', 'Gemini'],
 image: portrait,
 liveUrl: '',
-githubUrl: '',
+githubUrl: 'https://github.com/Yeabsira-Ayele/-Document-Q-A-with-Citations',
 featured: false,
 },
-{
-number: '03',
-year: '2026',
-status: 'Open Source',
-title: 'RAG Evaluation Suite',
-tagline: 'Evaluation framework for retrieval and generation',
-description:
-'An evaluation suite for measuring document retrieval and LLM answer quality using Hit@k, MRR, automated judging, end-to-end evaluation, and unanswerable questions.',
-tags: ['Python', 'ChromaDB', 'LLM', 'RAG', 'Streamlit'],
-image: portrait,
-liveUrl: '',
-githubUrl: '',
-},
+
 
 ]
 
@@ -143,15 +132,10 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-
-              {/* Image */}
-              <div className="hidden md:block relative min-h-[220px] md:min-h-full">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
+               {/*image*/}
+              <div className="hidden md:block relative aspect-[/]  ">
+              <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full" />
+</div>
             </div>
           ))}
         </div>
