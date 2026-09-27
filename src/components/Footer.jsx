@@ -1,12 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 
 const navigation = [
-  { to: 'projects', label: 'Projects' },
-  { to: 'experience', label: 'Experience' },
-  { to: 'skills', label: 'Skills' },
-  { to: 'contact', label: 'Contact' },
+  { to: '#projects', label: 'Projects' },
+  { to: '#experience', label: 'Experience' },
+  { to: '#skills', label: 'Skills' },
+  { to: '#contact', label: 'Contact' },
 ]
 
 const socialLinks = [
@@ -50,12 +49,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-3.5">
                 {navigation.map((link) => (
                   <li key={link.to}>
-                    <NavLink
-                      to={link.to}
+                    <a
+                      href={link.to}
                       className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                     >
                       {link.label}
-                    </NavLink>
+                    </a>
                   </li>
                 ))}
               </ul>
