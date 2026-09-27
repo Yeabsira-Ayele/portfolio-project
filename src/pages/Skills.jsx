@@ -118,6 +118,9 @@ const Skills = () => {
   return (
     <section className="bg-white dark:bg-black transition-colors">
       <div className="max-w-6xl mx-auto px-6 py-20">
+        <p className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">
+          Stack & tools
+        </p>
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-10">
           Skills & technologies
         </h2>
@@ -139,7 +142,7 @@ const Skills = () => {
         </div>
 
         {/* Skill grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  lg:grid-cols-5 gap-4">
           {activeCategory.skills.map((skill, i) => (
             <SkillCard
               key={skill}

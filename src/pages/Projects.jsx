@@ -52,7 +52,11 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-6 py-20">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex flex-col  items-start justify-start mb-10">
+          <p className="text-xs font-mono tracking-widest text-gray-400 dark:text-gray-500 uppercase mb-4">
+          Projects
+          </p>
+         
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
             Selected projects
           </h2>
